@@ -15,7 +15,7 @@ def main():
         data1 = json.load(json_file1)
 
     # Opening file 2
-    with open('pilot_annot_thijs.json', encoding='utf8') as json_file2:
+    with open('pilot_annot_nils.json', encoding='utf8') as json_file2:
         data2 = json.load(json_file2)
 
     # sorting the data (by default the order is weird for some reason)
@@ -37,8 +37,12 @@ def main():
     for i in range(1, 478):
 
         if i == data2[0].get('id'):
-            label_list_2.append(data2[0]["annotations"][0]["result"][0]["value"]['choices'][0])
-            del data2[0]
+            try:
+                label_list_2.append(data2[0]["annotations"][0]["result"][0]["value"]['choices'][0])
+                del data2[0]
+            except IndexError:
+                label_list_2.append("multiple")
+                del data2[0]
         else:
             label_list_2.append("multiple")
 
