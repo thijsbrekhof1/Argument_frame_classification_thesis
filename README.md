@@ -3,6 +3,7 @@
 
 ## Data folder
 The data folder includes scripts and spreadsheets that we used to get the data for our thesis project.
+The data used as input for the classification model can be found in the folder "data/Annotation data and scripts" under the name "all annotations.csv"
 
 ## getting frames folder
 
@@ -15,6 +16,4 @@ https://docs.google.com/spreadsheets/d/1Do8QpRcxpfNDlBnMahTqZaYZLYbsXJyWjNZtaTpD
  
 https://zenodo.org/record/3778298#.Ynf-xujP2Um -> Here you can find threads.jsonl, which is where our data comes from.
 
-## Data
 
-The data used as input for the classification model can be found in the folder "data/Annotation data and scripts" under the name "all annotations.csv"
