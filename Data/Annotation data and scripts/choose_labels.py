@@ -108,6 +108,7 @@ def main():
     final_df = pilot_annot_thijs.append(merged_df)
     final_df = final_df[final_df.topic.notnull()]
     final_df = final_df[final_df.topic != "Irrelevant"]
+    final_df = final_df[final_df.topic != '{"choices": ["Fairness and equality", "Policy prescription and evaluation"]}']
     # Checking distribution of final labels
     final_labels = final_df['topic'].tolist()
     label_dict, sorted_labels = check_distribution(final_labels)
