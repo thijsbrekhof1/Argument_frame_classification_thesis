@@ -9,6 +9,10 @@ The data used as input for the classification model can be found in the folder "
 
 The getting frames folder inlcudes scripts/spreadsheets that we used to get the frames we will/have used as labels for the classification task.
 
+## Method folder
+
+The method folder includes the final .ipynb file of the model, as well as evaluation metrics of its output averaged over 5 runs in the file scores.txt
+
 ## Important links:
 https://docs.google.com/spreadsheets/d/1-8VyIQBhiE4q_wUFV9V3GIXCSTmFUyqjiDypwDgKU_8/edit?usp=sharing -> The link to the spreadsheet(s) that we used to get the frames we use as labels. 
 
