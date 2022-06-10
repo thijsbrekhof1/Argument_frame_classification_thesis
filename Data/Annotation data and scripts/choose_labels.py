@@ -2,6 +2,7 @@ import random
 import pandas as pd
 import numpy as np
 
+
 def get_id(data):
     return data.get('id')
 
@@ -15,6 +16,7 @@ def check_distribution(labels):
             label_dict[label] = 1
 
     return label_dict, dict(sorted(label_dict.items(), key=lambda x: x[1], reverse=True))
+
 
 def main():
     df_thijs = pd.read_csv("all_annot_thijs.csv")
@@ -100,7 +102,6 @@ def main():
                         pilot_labels_total.append(label2)
                         label_dict[label2] += 1
 
-
     # Assigning the labels to a df
     pilot_annot_thijs.drop('topic', axis=1, inplace=True)
     pilot_annot_thijs['topic'] = pilot_labels_total
@@ -108,15 +109,15 @@ def main():
     final_df = pilot_annot_thijs.append(merged_df)
     final_df = final_df[final_df.topic.notnull()]
     final_df = final_df[final_df.topic != "Irrelevant"]
-    final_df = final_df[final_df.topic != '{"choices": ["Fairness and equality", "Policy prescription and evaluation"]}']
+    final_df = final_df[
+        final_df.topic != '{"choices": ["Fairness and equality", "Policy prescription and evaluation"]}']
     # Checking distribution of final labels
     final_labels = final_df['topic'].tolist()
     label_dict, sorted_labels = check_distribution(final_labels)
     print(sorted_labels)
     print(len(final_labels))
 
-
-    final_df.to_csv("all annotations.csv")
+    # final_df.to_csv("all annotations.csv")
 
 
 main()
